@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  table.table.table-hover
+    thead
+      th Group
+      th Name
+      th Surname
+      th Email
+
+    tbody
+      each user in users
+        tr
+          td= user.Group.name
+          td= user.name
+          td= user.surname
+          td= user.email
