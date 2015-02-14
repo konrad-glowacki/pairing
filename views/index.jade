@@ -5,7 +5,12 @@ block content
     h1 Witaj w Prayer Pairing!
     p Wpisz swój adres e-mail na który będą przychodzić powiadomienia
 
-    div.alert= errors
+    if errors
+      div.alert.alert-danger(role='alert')
+        strong Popraw następujące dane:
+        ul
+          each msg in errors
+            li= msg
 
     form.form-horizontal(method='post', role='form', action='/')
       div.form-group
