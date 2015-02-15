@@ -3,6 +3,7 @@ extends ../layout
 block content
   table.table.table-hover
     thead
+      th Id
       th Group
       th Name
       th Surname
@@ -12,6 +13,7 @@ block content
     tbody
       each user in users
         tr
+          td= user.id
           td= user.Group.name
           td= user.name
           td= user.surname

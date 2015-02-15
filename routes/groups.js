@@ -3,7 +3,7 @@ var express = require('express'),
     router = express.Router();
 
 router.get('/thanks/:id', function(req, res, next) {
-  models.User.find({ id: req.params.id, include: [models.Group] }).then(function(user) {
+  models.User.find({ where: { id: req.params.id }, include: [models.Group] }).then(function(user) {
     if (user) {
       res.render('groups/thanks', { user: user });
     } else {
