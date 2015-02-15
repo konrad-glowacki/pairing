@@ -7,6 +7,7 @@ block content
       th Name
       th Surname
       th Email
+      th
 
     tbody
       each user in users
@@ -15,3 +16,5 @@ block content
           td= user.name
           td= user.surname
           td= user.email
+          td
+            a(href='/admin/users/#{user.id}/destroy') Delete
