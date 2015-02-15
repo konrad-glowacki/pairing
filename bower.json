@@ -1,0 +1,21 @@
+{
+  "name": "pairing",
+  "version": "0.0.1",
+  "homepage": "https://github.com/webkrak/pairing",
+  "authors": [
+    "Konrad Głowacki <konrad@webkrak.pl>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "jquery": "~2.1.3"
+  }
+}

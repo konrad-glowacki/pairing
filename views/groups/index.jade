@@ -2,8 +2,15 @@ extends ../layout
 
 block content
   div.jumbotron
-    h1= group.name
-    p Witaj w grupie modlitwy! Wpisz swój adres e-mail na który będą przychodzić powiadomienia
+    h1
+      span.glyphicon.glyphicon-fire(aria-hidden='true')
+      &nbsp;
+      = group.name
+      
+    h3 Witaj w grupie modlitwy wzajemnej!
+    p.
+      Wpisz swój adres e-mail na który będą przychodzić powiadomienia.
+      Co tydzień będą losowane pary, które będą za siebie modlić. Zaczynamy od Wielkiego Postu.
 
     if errors
       div.alert.alert-danger(role='alert')

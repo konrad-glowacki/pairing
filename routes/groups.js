@@ -2,6 +2,16 @@ var express = require('express'),
     models = require('../models'),
     router = express.Router();
 
+router.get('/thanks/:id', function(req, res, next) {
+  models.User.find({ id: req.params.id, include: [models.Group] }).then(function(user) {
+    if (user) {
+      res.render('groups/thanks', { user: user });
+    } else {
+      res.render('error', { message: 'Page not exist' });
+    }
+  })
+});
+
 router.get('/:slug', function(req, res, next) {
   models.Group.find({ where: { slug: req.params.slug } })
     .complete(function(error, group) {
@@ -21,7 +31,7 @@ router.post('/', function(req, res) {
     email: req.body.email
   })
   .success(function(user) {
-    res.render('groups/thanks', { email: user.email });
+    res.redirect('groups/thanks/' + user.id);
   })
   .error(function(response) {
     models.Group.find({ slug: { slug: req.body.groupId } })

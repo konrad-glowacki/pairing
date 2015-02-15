@@ -2,8 +2,8 @@ extends ../layout
 
 block content
   div.jumbotron
-    h1 Zostałeś zapisany!
-    p Powiadomienie o wyznaczeniu pary dostaniesz na adres:
-      br
-      strong= email
-      
+    h1 Zostałeś zapisany do grupy!
+    h2= user.Group.name
+
+    p Powiadomienie o wyznaczeniu pary dostaniesz na adres:&nbsp;
+      strong= user.email
