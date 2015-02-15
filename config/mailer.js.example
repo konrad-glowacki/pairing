@@ -1,0 +1,11 @@
+exports.message = {
+  from: "admin@example.pl",
+  reply_to: "no-reply@example.pl"
+}
+
+exports.server = {
+  host: 'localhost',
+  port: 1025,
+  username: '',
+  password: ''
+}
