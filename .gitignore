@@ -31,4 +31,4 @@ bower_components
 
 /db/*.sqlite
 /config/authentication.js
-/Gruntfile.js
+/.shipit
