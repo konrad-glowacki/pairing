@@ -6,25 +6,47 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true
+      primaryKey: true,
     },
-    GroupId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: 'groupEmailIndex'
-    },
+
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: 'Name is empty' }
+      }
     },
+
     surname: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: 'Surname is empty' }
+      }
     },
+
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: 'groupEmailIndex'
+      validate: {
+        isUnique: function(value, next) {
+          User.find({ where: { email: value, groupId: this.getDataValue('GroupId') }})
+            .done(function(error, user) {
+              if (error) {
+                return next(error);
+              }
+
+              if (user) {
+                return next('Email already in registered');
+              }
+
+              next();
+            });
+        },
+        isLowercase: { msg: 'Email must be lowercase' },
+        notEmpty: { msg: 'Email is empty' },
+        isEmail: { msg: 'Email is invalid' }
+      }
     }
   }, {
     classMethods: {

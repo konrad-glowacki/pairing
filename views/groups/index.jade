@@ -1,4 +1,4 @@
-extends layout
+extends ../layout
 
 block content
   div.jumbotron
@@ -7,12 +7,12 @@ block content
 
     if errors
       div.alert.alert-danger(role='alert')
-        strong Popraw następujące dane:
+        strong Please repair errors below:
         ul
-          each msg in errors
-            li= msg
+          each error in errors
+            li= error.message
 
-    form.form-horizontal(method='post', role='form', action='/')
+    form.form-horizontal(method='post', role='form', action='/groups')
       input(type='hidden' name='groupId' value=group.id)
 
       div.form-group
