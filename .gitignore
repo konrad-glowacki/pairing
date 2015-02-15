@@ -29,5 +29,6 @@ bower_components
 # Users Environment Variables
 .lock-wscript
 
-db/*.sqlite
-config/authentication.js
+/db/*.sqlite
+/config/authentication.js
+/Gruntfile.js
