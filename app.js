@@ -9,7 +9,8 @@ var basicAuth = require('basic-auth');
 var authenticate = require('./routes/authentication')
     routes = require('./routes/index'),
     groups = require('./routes/groups'),
-    adminUsers = require('./routes/admin/users');
+    adminUsers = require('./routes/admin/users'),
+    scheduler = require('./lib/scheduler');
 
 var app = express();
 
