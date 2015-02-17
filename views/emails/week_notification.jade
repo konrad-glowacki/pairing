@@ -1,12 +1,30 @@
-h1 Witajcie,
+extends layout
 
-p W tym tygodniu zostaliście wylosowani abyście się za siebie modlili w parze
+block content
+  if users.length > 1
+    h1 Witajcie,
 
-ul
-  each user in users
-    li
-      p= user.name + ' ' + user.surname
-      p= user.email
+    p w tym tygodniu zostaliście wylosowani, abyście się za siebie modlili w parze:
 
-p Pamiętajcie o codziennej modlitwie
-p Zespół PrayPairing
+    ul
+      each user in users
+        li #{user.name} #{user.surname} (#{user.email})
+    p.
+      Jeżeli obydwoje wyrazicie chęci, to zachęcamy do umówienia się na kawę w trakcie tego tygodnia - 
+      będzie to okazją do lepszego poznania się i może też ukierunkowania swojej modlitwy w konkretnej intencji.
+
+    p(style='margin-bottom: 0;') Pamiętajcie o codziennej modlitwie!
+
+  else
+    h1 Witaj #{users[0].name},
+
+    p masz to szczęście, że zostałeś wylosowany do specjalnego zadania! <br />
+    p Prosimy Cię w tym tygodniu o codzienną modlitwę i post w intencji całej wspólnoty.
+
+    p
+      | Niech Twoja modlitwa ma konkretne owoce - za każdym razem jak <br />
+      | spotkasz kogoś ze wspólnoty obdarz go uśmiechem, dobrym słowem, powiedz komplement.
+
+    p(style='margin-bottom: 0;') Dziękujemy!
+
+  p(style={ margin: 0, padding: 0 }) Zespół PrayPairing
