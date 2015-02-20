@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .admin-panel
+    h1 Grupy
+
+    ul.nav.nav-tabs
+      each group, i in groups
+        li(role: 'presentation' class=(i === 0 ? 'active' : ''))
+          a(href="##{group.slug}" aria-controls=group.slug role='tab' data-toggle='tab')= group.name
+
+    div.tab-content.container
+      each group, i in groups
+        div.tab-pane(id=group.slug role='tabpanel' class=(i === 0 ? 'active' : ''))
+          table.table.table-hover
+            thead
+              th Id
+              th Name
+              th Surname
+              th Email
+              th Created
+              th
+
+            tbody
+              each user in group.Users
+                tr
+                  td= user.id
+                  td= user.name
+                  td= user.surname
+                  td= user.email
+                  td= dateFormat(user.createdAt, "dd.mm.yyyy, HH:MM")
+                  td
+                    a(href='/admin/users/#{user.id}/destroy') delete

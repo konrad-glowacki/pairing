@@ -1,6 +1,5 @@
 var express = require('express'),
-    router = express.Router(),
-    Mailer = require('../lib/mailer');
+    router = express.Router();
 
 router.get('/', function(req, res, next) {
   res.render('index');

@@ -9,6 +9,7 @@ var basicAuth = require('basic-auth');
 var authenticate = require('./routes/authentication')
     routes = require('./routes/index'),
     groups = require('./routes/groups'),
+    admin = require('./routes/admin/index'),
     adminUsers = require('./routes/admin/users'),
     scheduler = require('./lib/scheduler');
 
@@ -28,6 +29,7 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 app.use('/', routes);
 app.use('/groups', groups);
+app.use('/admin', authenticate, admin);
 app.use('/admin/users', authenticate, adminUsers);
 
 // catch 404 and forward to error handler
