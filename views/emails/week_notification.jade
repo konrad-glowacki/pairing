@@ -13,7 +13,7 @@ block content
       Jeżeli obydwoje wyrazicie chęci, to zachęcamy do umówienia się na kawę w trakcie tego tygodnia - 
       będzie to okazją do lepszego poznania się i może też ukierunkowania swojej modlitwy w konkretnej intencji.
 
-    p(style='margin-bottom: 0;') Pamiętajcie o codziennej modlitwie!
+    p Pamiętajcie o codziennej modlitwie!
 
   else
     h1 Witaj #{users[0].name},
@@ -27,4 +27,6 @@ block content
 
     p(style='margin-bottom: 0;') Dziękujemy!
 
-  p(style={ margin: 0, padding: 0 }) Zespół PrayPairing
+  p
+    | Zespół PrayPairing <br />
+    strong= group.name

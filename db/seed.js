@@ -1,9 +1,27 @@
 var models = require("../models");
 
-models.Group.create({
-  id: 1,
-  name: 'Chrystus w Starym Mieście',
-  slug: 'chwsm'
-}).complete(function(err, user) {
-  console.log('Group ChwSM created!');
+groups = [
+  {
+    slug: 'chwsm',
+    name: 'Chrystus w Starym Mieście',
+    description: ''
+  },
+  {
+    slug: 'sng',
+    name: 'Sala na Górze',
+    description: ''
+  }
+]
+
+groups.forEach(function(group) {
+  models.Group.findOrCreate({
+    where: { slug: group.slug },
+    defaults: { name: group.name, description: group.description },
+  }).spread(function(group, created) {
+    if (created) {
+      console.log("Group " + group.name + " created!");
+    } else {
+      console.log("Group " + group.name + " exsist!");
+    }
+  });
 });

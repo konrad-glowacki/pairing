@@ -8,9 +8,12 @@ block content
       = group.name
       
     h3 Witaj w grupie modlitwy wzajemnej!
+
     p.
       Wpisz swój adres e-mail, na który będą przychodzić powiadomienia o wylosowanej parze.
-      Co tydzień będą losowane pary, które będą się za siebie modlić. Zaczynamy od Środy Popielcowej.
+      Co tydzień będą losowane pary, które będą się za siebie modlić.
+
+    p= group.description
 
     if errors
       div.alert.alert-danger(role='alert')
