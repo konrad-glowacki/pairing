@@ -10,6 +10,11 @@ groups = [
     slug: 'sng',
     name: 'Sala na Górze',
     description: ''
+  },
+  {
+    slug: 'schola',
+    name: 'Schola Mariacka',
+    description: ''
   }
 ]
 
