@@ -16,7 +16,7 @@ block content
           div.tab-pane(id=group.slug role='tabpanel' class=(i === 0 ? 'active' : ''))
             table.table.table-hover
               thead
-                th Id
+                th #
                 th Name
                 th Surname
                 th Email
@@ -24,9 +24,9 @@ block content
                 th
 
               tbody
-                each user in group.Users
+                each user, i in group.Users
                   tr
-                    td= user.id
+                    td= i+1
                     td= user.name
                     td= user.surname
                     td= user.email
