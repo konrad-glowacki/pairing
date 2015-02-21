@@ -1,0 +1,28 @@
+extends public
+
+block content
+  h1 Logowanie
+
+  .container
+    if message != ''
+      .alert.alert-danger(role='alert')
+        strong= message
+
+    form.form-horizontal(method='post', role='form', action='/admin/login')
+      .form-group
+        label.col-sm-offset-2.col-sm-2.control-label(for='email') Email
+
+        .col-sm-4
+          input.form-control(placeholder='Email', required=true,
+            name='email', type='email', id='email')
+
+      .form-group
+        label.col-sm-offset-2.col-sm-2.control-label(for='password') Password
+
+        .col-sm-4
+          input.form-control(placeholder='Password', required=true,
+            name='password', type='password', id='password')
+
+      .form-group
+        .col-sm-offset-4.col-sm-4
+          button.btn.btn-success(type='submit') Sign In

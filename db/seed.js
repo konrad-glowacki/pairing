@@ -6,11 +6,13 @@ groups = [
     name: 'Chrystus w Starym Mieście',
     description: ''
   },
+
   {
     slug: 'sng',
     name: 'Sala na Górze',
     description: ''
   },
+
   {
     slug: 'schola',
     name: 'Schola Mariacka',

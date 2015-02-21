@@ -9,15 +9,5 @@ html(lang="pl")
     script(type='text/javascript' src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
 
   body
-    nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
-      .container-fluid
-        .navbar-header
-          a.navbar-brand(href='/admin') PrayPairing
-
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            li
-              a.btn.btn-link(href='/admin/logout') Logout
-
-    div.container
+    .container
       block content

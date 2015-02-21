@@ -30,5 +30,6 @@ bower_components
 .lock-wscript
 
 /db/*.sqlite
+/db/secure_seed.js
 /config/*.js
 /.shipit
