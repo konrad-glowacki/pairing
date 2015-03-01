@@ -12,6 +12,7 @@ var routes = require('./routes/index'),
     groups = require('./routes/groups'),
     admin = require('./routes/admin/index'),
     adminGroups = require('./routes/admin/groups'),
+    adminUsers = require('./routes/admin/users'),
     scheduler = require('./lib/scheduler'),
     auth = require('./lib/authentication'),
     models = require('./models');
@@ -51,6 +52,7 @@ app.use('/', routes);
 app.use('/groups', groups);
 app.use('/admin', admin);
 app.use('/admin/groups', auth.authenticate, adminGroups);
+app.use('/admin/users', auth.authenticate, adminUsers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

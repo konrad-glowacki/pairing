@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  nav
+    ul.pager
+      li.previous
+        a(href='/admin/groups')
+          span(aria-hidden='true') &larr; Back
+
+  .admin-panel
+    h1
+      = user.fullName()
+      small &nbsp;#{user.Group.name}
+
+    div.tab-content.container
+      table.table.table-hover
+        thead
+          th #
+          th Round
+          th User
+          th User
+          th Created
+          th
+
+        tbody
+          each history, i in userPairs
+            tr
+              td= i+1
+              td= history.Round.number
+              td= history.User.fullName()
+              td= history.Pair.fullName()
+              td= dateFormat(user.createdAt, "dd.mm.yyyy, HH:MM")

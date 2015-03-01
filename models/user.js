@@ -49,9 +49,16 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
+    instanceMethods: {
+      fullName: function() {
+        return this.name + ' ' + this.surname;
+      }
+    },
+
     classMethods: {
       associate: function(models) {
-        User.belongsTo(models.Group)
+        User.belongsTo(models.Group),
+        User.belongsToMany(User, { as: 'Pair', through: models.UserPairs })
       }
     }
   });
