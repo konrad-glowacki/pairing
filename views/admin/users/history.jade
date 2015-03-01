@@ -15,7 +15,6 @@ block content
     div.tab-content.container
       table.table.table-hover
         thead
-          th #
           th Round
           th User
           th User
@@ -23,9 +22,8 @@ block content
           th
 
         tbody
-          each history, i in userPairs
+          each history in userPairs
             tr
-              td= i+1
               td= history.Round.number
               td= history.User.fullName()
               td= history.Pair.fullName()

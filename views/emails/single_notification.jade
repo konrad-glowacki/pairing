@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Witaj #{user.name},
+
+    p masz to szczęście, że zostałeś wylosowany do specjalnego zadania w turze #{round.number}! <br />
+    p Prosimy Cię w tym tygodniu o codzienną modlitwę i post w intencji całej wspólnoty.
+
+    p
+      | Niech Twoja modlitwa ma konkretne owoce - za każdym razem jak <br />
+      | spotkasz kogoś ze wspólnoty obdarz go uśmiechem, dobrym słowem, powiedz komplement.
+
+    p(style='margin-bottom: 0;') Dziękujemy!
+
+  p
+    | Zespół PrayPairing <br />
+    strong= group.name

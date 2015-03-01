@@ -31,7 +31,8 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           UserPairs.belongsTo(models.Round),
-          UserPairs.belongsTo(models.User)
+          UserPairs.belongsTo(models.User),
+          UserPairs.belongsTo(models.User, { as: 'Pair', foreignKey: 'PairId' })
         }
       }
     }
