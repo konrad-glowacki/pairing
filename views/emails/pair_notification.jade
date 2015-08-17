@@ -3,14 +3,14 @@ extends layout
 block content
   h1 Witajcie,
 
-  p w tym tygodniu [tura #{round.number}] zostaliście wylosowani, abyście się za siebie modlili w parze:
+  p W tym tygodniu w <b>#{round.number} turze</b> zostaliście wylosowani, abyście się za siebie modlili w parze:
 
   ul
     li #{user.fullName()} (#{user.email})
     li #{pair.fullName()} (#{pair.email})
 
   p.
-    Jeżeli obydwoje wyrazicie chęci, to zachęcamy do umówienia się na kawę w trakcie tego tygodnia - 
+    Jeżeli obydwoje wyrazicie chęci, to zachęcamy do umówienia się na kawę w trakcie tego czasu -
     będzie to okazją do lepszego poznania się i może też ukierunkowania swojej modlitwy w konkretnej intencji.
 
   p Pamiętajcie o codziennej modlitwie!

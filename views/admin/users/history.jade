@@ -4,7 +4,7 @@ block content
   nav
     ul.pager
       li.previous
-        a(href='/admin/groups')
+        a(href="/admin/groups##{user.Group.slug}")
           span(aria-hidden='true') &larr; Back
 
   .admin-panel
@@ -27,4 +27,4 @@ block content
               td= history.Round.number
               td= history.User.fullName()
               td= history.Pair.fullName()
-              td= dateFormat(user.createdAt, "dd.mm.yyyy, HH:MM")
+              td= dateFormat(userPairs.createdAt, "dd.mm.yyyy, HH:MM")

@@ -16,12 +16,12 @@ router.get('/thanks/:id', function(req, res, next) {
 });
 
 router.get('/:slug', function(req, res, next) {
-  models.Group.find({ where: { slug: req.params.slug } })
-    .complete(function(error, group) {
+  models.Group.findOne({ where: { slug: req.params.slug } })
+    .then(function(group) {
       if (group) {
         res.render('groups/index', { group: group });
       } else {
-        res.render('error', { message: 'Page not exist', error: error });
+        res.render('error', { message: 'Page not exist' });
       }
     });
 });
@@ -33,10 +33,10 @@ router.post('/', function(req, res) {
     surname: req.body.surname,
     email: req.body.email
   })
-  .success(function(user) {
+  .then(function(user) {
     res.redirect('groups/thanks/' + user.id);
   })
-  .error(function(response) {
+  .catch(function(response) {
     models.Group.find({ slug: { slug: req.body.groupId } })
       .then(function(group) {
         res.render('groups/index', {
