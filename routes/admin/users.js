@@ -18,8 +18,8 @@ router.get('/history/:id', function(req, res, next) {
   });
 });
 
-router.delete('/destroy/:id', function(req, res, next) {
-  models.User.find(req.params.id).then(function(user) {
+router.get('/destroy/:id', function(req, res, next) {
+  models.User.find({ where: { id: req.params.id } }).then(function(user) {
     if (user) {
       user.destroy().then(function() {
         res.redirect('/admin/groups');

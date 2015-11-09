@@ -32,4 +32,6 @@ block content
                     td= user.email
                     td= dateFormat(user.createdAt, "dd.mm.yyyy, HH:MM")
                     td
+                      a(href='/admin/users/destroy/#{user.id}') delete
+                      &nbsp;
                       a(href='/admin/users/history/#{user.id}') history
